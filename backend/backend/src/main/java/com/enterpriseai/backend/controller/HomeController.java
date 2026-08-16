@@ -15,4 +15,8 @@ public class HomeController {
     public String hello() {
         return "Hello Laxman! Enterprise AI Copilot Backend is Running Successfully.";
     }
+    @GetMapping("/api/protected")
+public String protectedEndpoint() {
+    return "JWT Authentication Successful! You can access protected resources.";
+}
 }

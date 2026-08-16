@@ -1,5 +1,7 @@
 package com.enterpriseai.backend.controller;
 
+import com.enterpriseai.backend.dto.LoginRequest;
+import com.enterpriseai.backend.dto.LoginResponse;
 import com.enterpriseai.backend.dto.UserRegistrationRequest;
 import com.enterpriseai.backend.service.UserService;
 import jakarta.validation.Valid;
@@ -18,5 +20,10 @@ public class UserController {
     @PostMapping("/register")
     public String registerUser(@Valid @RequestBody UserRegistrationRequest request) {
         return userService.registerUser(request);
+    }
+
+    @PostMapping("/login")
+    public LoginResponse loginUser(@RequestBody LoginRequest request) {
+        return userService.loginUser(request);
     }
 }
